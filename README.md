@@ -4,7 +4,7 @@
 
 ## Models 
 
-- User -> Devise
+x User -> Devise
 - AdminUser -> STI
 
 ## Features:
