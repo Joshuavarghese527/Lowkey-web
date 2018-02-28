@@ -5,7 +5,7 @@
 ## Models 
 
 x User -> Devise
-- AdminUser -> STI
+x AdminUser -> STI
 
 ## Features:
 - Approval Workflow
