@@ -63,3 +63,5 @@ gem 'twilio-ruby', '4.11.1'
 
 gem 'stripe', '~> 3.0.0'
 gem 'rails-assets-card', source: 'https://rails-assets.org'
+
+gem 'rails_12factor', group: :production
