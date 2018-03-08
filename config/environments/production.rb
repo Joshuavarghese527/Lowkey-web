@@ -23,7 +23,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.complie = false
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -70,6 +70,31 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+   config.paperclip_defaults = {
+     storage: :s3,
+     path: ':class/:attachment/:id/:style/:filename',
+     s3_host_name: 's3-us-east-1.amazonaws.com',
+     s3_credentials: {
+       bucket: ENV['S3_BUCKET_NAME'],
+       access_key_id: ENV['S3_ACCESS_KEY'],
+       secret_access_key: ENV['SECRET_ACCESS_KEY'],
+       s3_region: 'us-east-1'
+     }
+   }
+
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 587,
+    enable_starttls_auto: true,
+    authentication: 'plain',
+    user_name: 'joshuavarghese527@gmail.com',
+    password: 'Cheeni27'
+  }
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'

@@ -14,7 +14,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'Joshua @ Lowkey <no-reply@lowkey.com>'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -138,7 +138,7 @@ Devise.setup do |config|
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed, new email is stored in
   # unconfirmed_email column, and copied to email column on successful confirmation.
-  config.reconfirmable = true
+  config.reconfirmable = false
 
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [:email]
@@ -274,6 +274,9 @@ Devise.setup do |config|
   # config.router_name = :my_engine
   #
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
-  # so you need to do it manually. For the users scope, it would be:
-  # config.omniauth_path_prefix = '/my_engine/users/auth'
+   #so you need to do it manually. For the users scope, it would be:
+   config.omniauth_path_prefix = '/my_engine/users/auth'
+   require 'omniauth-google-oauth2'
+  config.omniauth :facebook,  ENV["FACEBOOK_APP_ID"], ENV["FACEBOOK_APP_SECERT"], scope: 'email', info_fields: 'email,name'
+  config.omniauth :google_oauth2,  ENV["GOOGLE_APP_ID"], ENV["GOOGLE_APP_SECERT"], scope: 'email', info_fields: 'email,name'
 end

@@ -33,3 +33,33 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'devise', '~> 4.4', '>= 4.4.1'
+
+gem 'toastr-rails'
+
+gem "figaro"
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem "omniauth-google-oauth2"
+
+#fontawesome
+gem 'font-awesome-sass'
+
+gem 'activeadmin'
+gem 'active_skin' 
+
+
+gem 'paperclip', '~> 5.1.0'
+gem 'aws-sdk', '~> 2.8'
+
+gem 'geocoder', '~> 1.4'
+gem 'jquery-ui-rails', '~> 5.0'
+
+gem 'ransack', '~> 1.7'
+
+gem 'jquery-timepicker-addon-rails'
+
+gem 'twilio-ruby', '4.11.1'
+
+gem 'stripe', '~> 3.0.0'
+gem 'rails-assets-card', source: 'https://rails-assets.org'

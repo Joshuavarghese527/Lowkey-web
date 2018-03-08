@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-3">
+    <ul class="sidebar-list">
+    <li class="sidebar-item"><%= link_to "View My Profile", user_path(current_user.id), class: "sidebar-link" %></li>
+      <li class="sidebar-item"><%= link_to "Your Trips", your_trips_path, class: "sidebar-link active" %></li>
+    </ul>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Your Trips
+      </div>
+      <div class="panel-body">
+
+        <% @trips.each do |trip| %>
+          <div class="row">
+          <div class="col-md-3">
+              <%= trip.start_time.strftime('%v') %>
+              <p><%= trip.status %></p>
+            </div>
+            <div class="col-md-3">
+              <%= link_to location_path(trip.location) do %>
+                <%= image_tag trip.location.image(:thumb) %>
+              <% end %>
+            </div>
+            <div class="col-md-3">
+              <%= link_to trip.location.lisiting_name, location_path(trip.location) %><br/><br/>
+              </div>
+              <div class="col-md-3">
+              <span>
+              <%= image_tag avatar_url(current_user), class: "img-circle avatar-small" %>&nbsp;
+              <%= current_user.fullname %>
+              </span>
+            </div>
+          </div>
+          <hr/>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
