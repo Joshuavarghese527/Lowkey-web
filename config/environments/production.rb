@@ -78,13 +78,13 @@ Rails.application.configure do
      s3_credentials: {
        bucket: ENV['S3_BUCKET_NAME'],
        access_key_id: ENV['S3_ACCESS_KEY'],
-       secret_access_key: ENV['SECRET_ACCESS_KEY'],
+       secret_access_key: ENV['S3_SECRET_ACCESS_KEY'],
        s3_region: 'us-east-1'
      }
    }
 
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'https://lowkey-v1.herokuapp.com/' }
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -92,8 +92,8 @@ Rails.application.configure do
     port: 587,
     enable_starttls_auto: true,
     authentication: 'plain',
-    user_name: 'joshuavarghese527@gmail.com',
-    password: 'Cheeni27'
+    user_name: ENV['EMAIL'],
+    password: ENV['EMAIL_PASSWORD']
   }
 
   # Use a different logger for distributed setups.
