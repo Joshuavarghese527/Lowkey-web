@@ -101,7 +101,7 @@
 
       <div id="map" style="width: 100%; height: 400px"></div>
 
-      <script src="https://maps.googleapis.com/maps/api/js"></script>
+      <script src="https://maps.googleapis.com/maps/${ENV[GOOGLE_API]}/js"></script>
       <script>
           function initialize() {
             var location = {lat: <%= @location.latitude %>, lng: <%= @location.longitude %>};
