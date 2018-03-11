@@ -24,16 +24,16 @@
     <div class="row text-babu">
       <div class="row text-center row-space-1">
         <div class="col-md-3">
-          <i class="fa fa-home fa-2x"></i>
-        </div>
-        <div class="col-md-3">
           <i class="fa fa-user-circle-o fa-2x"></i>
         </div>
         <div class="col-md-3">
-          <i class="fa fa-bed fa-2x"></i>
+          <i class="fa fa-wifi fa-2x"></i>
         </div>
         <div class="col-md-3">
-          <i class="fa fa-bath fa-2x"></i>
+          <i class="fa fa-coffee fa-2x"></i>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-train fa-2x"></i>
         </div>
       </div>
 
@@ -76,23 +76,6 @@
       </div>
 
     </div>
-    <hr/>
-
-     <!-- REVIEWS -->
-    <div class="row">
-      <div class="col-md-12">
-        <h3>
-         <p><%= pluralize(@reviews.count, 'review') %></p>
-          <span id="average_rating"></span>
-        </h3>
-        <div class="container">
-           <div><%= render 'reviews/form' %></div>
-            <div><%= render 'reviews/index' %></div>
-
-        </div>
-      </div>
-    </div>
-    <br/>
     <hr/>
 
 
@@ -153,12 +136,3 @@
     <%= render 'reservations/form' %>
   </div>
 </div>
-
-
- <script>
-  $('#average_rating').raty({
-    path: '/assets',
-    readOnly: true,
-    score: <%= @location.average_rating %>
-  });
-</script>

@@ -19,10 +19,4 @@ class Location < ApplicationRecord
 
   has_many :reviews
 
-
- def average_rating
-    reviews.blank? ? 0 : reviews.average(:star).round(2)
-  end
-
-
 end
